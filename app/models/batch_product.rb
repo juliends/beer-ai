@@ -6,7 +6,7 @@
 class BatchProduct < ApplicationRecord
   belongs_to :batch
   belongs_to :product
-  has_many :deliveries
+  has_many :deliveries, dependent: :destroy
 
   delegate :name, to: :product, prefix: false
 end
