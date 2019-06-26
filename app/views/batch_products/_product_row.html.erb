@@ -1,8 +1,10 @@
-<div class="card-product">
-  <%= product.emoji %>
-  <div class="card-product-infos">
-    <h2><p><%= product.name %></p></h2>
-    <p>Product description with <strong>relevant info</strong> only.</p>
-    <%= render "deliveries/form", product: product %>
+<div data-controller="deliveries" data-target="deliveries.productRow">
+  <div class="card-product">
+    <%= product.emoji %>
+    <div class="card-product-infos">
+      <h2><p><%= product.name %></p></h2>
+      <p>Product description with <strong>relevant info</strong> only.</p>
+      <%= render "deliveries/form", product: product %>
+    </div>
   </div>
 </div>
