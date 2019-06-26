@@ -2,8 +2,8 @@ class ForecastService
 
   # NB edge case 0
 
-  def initialize(batch_product_id)
-    @batch_product = BatchProduct.find batch_product_id
+  def initialize(batch_product)
+    @batch_product = batch_product
     @deliveries = @batch_product.deliveries
   end
 
