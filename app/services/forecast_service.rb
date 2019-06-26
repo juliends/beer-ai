@@ -8,6 +8,8 @@ class ForecastService
   end
 
   def call
+    return if @deliveries.length == 1
+
     Forecast.create!(
       batch_product: @batch_product,
       delivery: last_delivery,
