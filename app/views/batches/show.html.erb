@@ -1,12 +1,19 @@
 <div class="container-fluid main-bg pt-4">
-  <div class="text-center">
-    <h3><%= @batch.city %>#<%= @batch.number %></h3>
-  </div>
-  <%= render partial: "batch_products/product_row", collection: @products, as: :batch_product %>
+  <div class="container">
+    <h3 class="mb-4"><%= @batch.city %>#<%= @batch.number %></h3>
+    <div class="rows-wrapper" data-controller="new-row" data-target="new-row.rowsWrapper">
+      <%= render partial: "batch_products/product_row", collection: @products, as: :product %>
+    </div>
 
-  <div>
-    <p>
-      <%= link_to "Add Row", new_batch_product_path, remote: true, data: { type: 'html' } %>
-    </p>
+    <div>
+      <p>
+        <%= link_to "Add Row",
+                    new_batch_product_path,
+                    remote: true,
+                    data: { type: 'html' },
+                    class: 'btn btn-secondary'
+        %>
+      </p>
+    </div>
   </div>
 </div>
