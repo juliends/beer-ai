@@ -1,11 +1,12 @@
 import "bootstrap";
 import Rails from 'rails-ujs';
 import Turbolinks from 'turbolinks';
-import { Application } from "stimulus"
-import { definitionsFromContext } from "stimulus/webpack-helpers"
+import { Application } from "stimulus";
+import { definitionsFromContext } from "stimulus/webpack-helpers";
+import "../plugins/flatpickr";
 
 Rails.start();
 Turbolinks.start();
-const application = Application.start()
+const application = Application.start();
 const context = require.context("../controllers", true, /\.js$/);
-application.load(definitionsFromContext(context))
+application.load(definitionsFromContext(context));

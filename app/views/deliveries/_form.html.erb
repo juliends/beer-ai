@@ -1,5 +1,6 @@
-<form class="simple_form new_delivery" id="new_delivery" novalidate="novalidate" action="/bp/<%= product.id %>/deliveries" accept-charset="UTF-8" data-remote="true" data-type="html" data-action="ajax:success->deliveries#onPostSuccess" method="post"><input name="utf8" type="hidden" value="✓">
-  <div class="form-group hidden delivery_qty"><input class="form-control hidden" type="hidden" name="delivery[qty]" id="delivery_qty"></div>
-  <div class="form-group hidden delivery_date"><input class="form-control hidden" type="hidden" name="delivery[date]" id="delivery_date"></div>
-  <input type="submit" name="commit" value="+" data-disable-with="+">
-</form>
+<%= simple_form_for [product, Delivery.new], remote: true, data: { type: 'html', action: "ajax:success->deliveries#onPostSuccess" }, html: { class: 'form-inline' } do |f| %>
+  <%= f.input :qty %>
+  <%= f.input :date, input_html: { class: "datepicker" } %>
+  <%= f.input :batch_product_id, input_html: { value: product.id }, as: :hidden %>
+  <%= f.submit 'Go!', class: 'btn btn-secondary' %>
+<% end %>
