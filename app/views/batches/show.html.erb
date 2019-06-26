@@ -1,1 +1,6 @@
-<%= render partial: "batch_products/product_row", collection: @products, as: :product %>
+<div class="container-fluid main-bg pt-4">
+  <div class="text-center">
+    <h3><%= @batch.city %>#<%= @batch.number %></h3>
+  </div>
+  <%= render partial: "batch_products/product_row", collection: @products, as: :batch_product %>
+</div>
