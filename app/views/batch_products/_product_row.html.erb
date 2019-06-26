@@ -1,8 +1,8 @@
 <div class="card-product">
-  <%= batch_product.product.emoji %>
+  <%= product.emoji %>
   <div class="card-product-infos">
-    <h2><p><%= batch_product.name %></p></h2>
+    <h2><p><%= product.name %></p></h2>
     <p>Product description with <strong>relevant info</strong> only.</p>
-    <%= render "deliveries/form", product: batch_product.product %>
+    <%= render "deliveries/form", product: product %>
   </div>
 </div>
