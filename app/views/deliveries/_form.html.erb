@@ -1,6 +1,6 @@
-<%= simple_form_for [product, Delivery.new], remote: true, data: { type: 'html', action: "ajax:success->deliveries#onPostSuccess" } do |f| %>
-  <%= f.input :qty, as: :hidden %>
-  <%= f.input :date, as: :hidden %>
+<%= simple_form_for [product, Delivery.new], remote: true, data: { type: 'html', action: "ajax:success->deliveries#onPostSuccess" }, html: { class: 'form-inline' } do |f| %>
+  <%= f.input :qty %>
+  <%= f.input :date %>
   <%= f.input :batch_product_id, input_html: { value: product.id }, as: :hidden %>
-  <%= f.submit '+' %>
+  <%= f.submit 'Go!', class: 'btn btn-secondary' %>
 <% end %>
