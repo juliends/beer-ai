@@ -35,19 +35,18 @@ Product.create!(
   [
     { name: "Beer", description: "Wagon's favorite drink!", emoji: "🍺" },
     { name: "Toilet Paper", description: "Let's keep things clean", emoji: "🧻" },
-    { name: "Coffee", description: "Code fuel", emoji: "☕️" }
+    { name: "Coffee", description: "Code fuel", emoji: "☕️" },
+    { name: "Croissant", description: "Cause we're French", emoji: "🥐" }
   ]
 )
 puts "#{Product.count} products created!"
 
 puts "Creating batch_products..."
-batch.products = Product.all
+batch.products = Product.first(2)
 batch.save!
 
 set_bp_attributes(batch, "Beer",42, "Bottles")
 set_bp_attributes(batch, "Toilet Paper", 42, "Rolls")
-set_bp_attributes(batch, "Coffee", 5, "Kilos")
-
 
 Delivery.create!(
   [

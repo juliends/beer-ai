@@ -14,9 +14,7 @@ class BatchProductsController < ApplicationController
       product: @product
     )
     render partial: 'batch_products/product_row',
-           locals: {
-             product: @batch_product
-           }
+           locals: { product: @batch_product, forecast: nil }
   end
 
   private

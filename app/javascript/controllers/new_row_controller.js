@@ -21,9 +21,9 @@ export default class extends Controller {
       success: function(response){
         console.log(response);
         parentDiv.outerHTML = response.body.childNodes[0].innerHTML;
+        flatpickr('.datepicker', {})
       },
       error: function(response){}
     })
   }
-
 }
