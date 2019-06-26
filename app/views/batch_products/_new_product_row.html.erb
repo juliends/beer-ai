@@ -1,5 +1,16 @@
 <div class="card-product justify-content-around mt-3">
-  <%= simple_form_for batch_product do |f| %>
-    <%= f.association :product %>
+  <%= simple_form_for @batch_product,
+                      url: batch_batch_products_path(@batch),
+                      data: {
+                        target: 'new-row.newRowForm',
+                        batch_id: @batch.id
+                      } do |f| %>
+    <%= f.association :product,
+          input_html: {
+            data: {
+              action: 'change->new-row#reactOnChange'
+            }
+          }
+    %>
   <% end %>
 </div>
