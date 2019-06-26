@@ -4,7 +4,8 @@ class DeliveriesController < ApplicationController
     @batch_product = BatchProduct.find(params[:batch_product_id])
     @delivery.batch_product = @batch_product
     @delivery.save
-    render partial: 'batch_products/product_row', locals: { product: @batch_product }
+    @forecast = ForecastService.new(@batch_product).call
+    render partial: 'batch_products/product_row', locals: { product: @batch_product, forecast: @forecast }
   end
 
   private

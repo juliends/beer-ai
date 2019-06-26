@@ -8,9 +8,8 @@
 }
 
 .card-product .emoji {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
+  flex: 0 0 20%;
+  text-align: center;
 }
 
 .card-product h2 {
@@ -27,14 +26,24 @@
   margin-top: 8px;
 }
 
-.card-product .card-product-infos {
+.card-product-infos {
   padding: 16px;
+  flex: 0 0 30%;
 }
 
-.card-product form {
-
+.delivery-form {
+  flex: 0 0 50%;
 }
-
 .flex-end {
   align-self: flex-end;
+}
+
+.forecast {
+  margin-top: 5px;
+  border-radius: 20px;
+  background-color: #1bbb72cc;
+  text-align: center;
+  p {
+    padding: 7px;
+  }
 }
