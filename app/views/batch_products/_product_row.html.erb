@@ -1,17 +1,8 @@
 <div class="card-product">
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
   <div class="card-product-infos">
-    <h2><p><%= product.name %></p></h2>
+    <h2><p><%= batch_product.name %></p></h2>
     <p>Product description with <strong>relevant info</strong> only.</p>
-
+    <%= render "deliveries/form", product: batch_product.product %>
   </div>
 </div>
-
-
-
-<%= simple_form_for Delivery.new do |f| %>
-  <%= f.input :qty %>
-  <%= f.input :date %>
-  <%= f.input :product_id, input_html: { value: product.product.id } %>
-  <%= f.submit %>
-<% end %>
