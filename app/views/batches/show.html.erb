@@ -1,6 +1,6 @@
 <div class="container-fluid main-bg pt-4">
   <div class="container">
-    <h3 class="mb-4"><%= @batch.city %>#<%= @batch.number %></h3>
-    <%= render partial: "batch_products/product_row", collection: @products, as: :product %>
+    <h3 class="mb-4"><%= @batch.city %>#<%= @batch.number %> - <%= @batch.headcount %> students 👨‍💻</h3>
+    <%= render partial: "batch_products/product_row", collection: @products, as: :product, locals: { forecast: nil } %>
   </div>
 </div>

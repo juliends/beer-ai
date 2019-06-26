@@ -1,6 +1,6 @@
-<%= simple_form_for [product, Delivery.new], remote: true, data: { type: 'html', action: "ajax:success->deliveries#onPostSuccess" }, html: { class: 'form-inline' } do |f| %>
+<%= simple_form_for [product, Delivery.new], remote: true, data: { type: 'html', action: "ajax:success->deliveries#onPostSuccess" }, html: { class: 'form-inline delivery-form' } do |f| %>
   <%= f.input :qty, label: 'Quantity', wrapper_html: { class: 'd-flex flex-column mr-3' } %>
   <%= f.input :date, input_html: { class: "datepicker" },wrapper_html: { class: 'd-flex flex-column mr-3' }, as: :string %>
   <%= f.input :batch_product_id, input_html: { value: product.id }, as: :hidden %>
-  <%= f.submit 'Go!', class: 'btn btn-secondary flex-end' %>
+  <%= f.submit '🚚', class: 'btn btn-success flex-end' %>
 <% end %>

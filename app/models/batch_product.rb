@@ -8,12 +8,8 @@ class BatchProduct < ApplicationRecord
   belongs_to :product
   has_many :deliveries, dependent: :destroy
 
-  # aliases self.product.name as self.name
   delegate :name, to: :product, prefix: false
-
-  # aliases self.deliveries.count as self.deliveries_count
-  delegate :count, to: :deliveries, prefix: true
-
-  # aliases self.product.name as self.name
   delegate :emoji, to: :product, prefix: false
+  delegate :description, to: :product, prefix: false
+  delegate :count, to: :deliveries, prefix: true
 end
