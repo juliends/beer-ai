@@ -1,6 +1,22 @@
 <div class="container-fluid main-bg pt-4">
-  <div class="container">
+  <div class="container" data-controller="new-row">
     <h3 class="mb-4"><%= @batch.city %>#<%= @batch.number %> - <%= @batch.headcount %> students 👨‍💻</h3>
-    <%= render partial: "batch_products/product_row", collection: @products, as: :product, locals: { forecast: nil } %>
+    <div class="rows-wrapper" data-target="new-row.rowsWrapper">
+      <%= render partial: "batch_products/product_row", collection: @products, as: :product, locals: { forecast: nil } %>
+    </div>
+
+    <div>
+      <p>
+        <%= link_to "Add Row",
+                    new_batch_batch_product_path(params[:id]),
+                    remote: true,
+                    data: {
+                      type: 'html',
+                      action: 'ajax:success->new-row#onPostSuccess'
+                    },
+                    class: 'btn btn-secondary'
+        %>
+      </p>
+    </div>
   </div>
 </div>
