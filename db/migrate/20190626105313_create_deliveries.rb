@@ -4,7 +4,7 @@ class CreateDeliveries < ActiveRecord::Migration[5.2]
       t.date :date
       t.integer :qty
       t.text :note
-      t.references :product, foreign_key: true
+      t.references :batch_product, foreign_key: true
 
       t.timestamps
     end
