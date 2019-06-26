@@ -13,4 +13,7 @@ class BatchProduct < ApplicationRecord
 
   # aliases self.deliveries.count as self.deliveries_count
   delegate :count, to: :deliveries, prefix: true
+
+  # aliases self.product.name as self.name
+  delegate :emoji, to: :product, prefix: false
 end
